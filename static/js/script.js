@@ -1,15 +1,19 @@
 (function(document) {
-  var toggle = document.querySelector('.sidebar-toggle');
-  var sidebar = document.querySelector('#sidebar');
-  var checkbox = document.querySelector('.sidebar-checkbox');
+  document.addEventListener('DOMContentLoaded', function(e) {
 
-  document.addEventListener('click', function(e) {
-    var target = e.target;
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('.sidebar-checkbox');
 
-    if(!checkbox.checked ||
-       sidebar.contains(target) ||
-       (target === checkbox || target === toggle)) return;
+    document.addEventListener('click', function(e) {
 
-    checkbox.checked = false;
+      var target = e.target;
+
+      if(!checkbox.checked ||
+         sidebar.contains(target) ||
+         (target === checkbox || target === toggle)) return;
+
+      checkbox.checked = false;
+    }, false);
   }, false);
 })(document);
